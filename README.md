@@ -6,7 +6,7 @@ el pago e imprimen el ticket; y la dueña consulta pedidos, pagos y ventas.
 
 ## Stack
 
-- Backend: Java 21, Spring Boot 3, Spring Security, Spring Data JPA, Flyway
+- Backend: Java 21, Spring Boot 4, Spring Data JPA, Flyway, Swagger (OpenAPI 3)
 - Frontend: React, TypeScript, Vite, Tailwind (PWA)
 - Base de datos: PostgreSQL 16
 - Entorno: Docker Compose
@@ -24,6 +24,16 @@ el pago e imprimen el ticket; y la dueña consulta pedidos, pagos y ventas.
 2. Levanta PostgreSQL: `docker compose up -d`
 3. Verifica que esté saludable: `docker compose ps`
 4. Para apagarla: `docker compose down` (los datos se conservan en un volumen)
+
+## Cómo levantar el backend
+
+```bash
+cd backend
+.\mvnw.cmd spring-boot:run
+```
+
+- API: `http://localhost:8080/api/ping`
+- Swagger UI: `http://localhost:8080/swagger-ui.html`
 
 ## Flujo de trabajo
 
