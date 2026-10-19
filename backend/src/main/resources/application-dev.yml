@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:${DB_PORT:5432}/${DB_NAME:polleria}
+    username: ${DB_USER:polleria}
+    password: ${DB_PASSWORD:}
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
