@@ -1,0 +1,32 @@
+# Secretos y configuracion local
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Java / Maven / Gradle
+target/
+build/
+.gradle/
+*.class
+*.log
+
+# Node / Vite
+node_modules/
+dist/
+.vite/
+coverage/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Respaldos locales
+*.dump
+*.sql.gz

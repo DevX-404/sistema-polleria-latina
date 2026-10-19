@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: polleria-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-polleria}
+      POSTGRES_USER: ${DB_USER:-polleria}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Falta DB_PASSWORD, copia .env.example a .env}
+    ports:
+      - "127.0.0.1:${DB_PORT:-5432}:5432"
+    volumes:
+      - polleria_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-polleria} -d ${DB_NAME:-polleria}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  polleria_db_data:
